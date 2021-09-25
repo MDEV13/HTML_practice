@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   <title>3 Column Layout</title>
+   <link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+<header class="header"><p>Header...</p></header>
+<div class="container">
+   <main class="center column">
+       <article>
+           <h1>Таблица</h1>
+           <p>
+               <style>
+                    td 
+                    {
+                        height: 20px;
+                        border: 1px solid black;
+                    }
+                    th
+                    {
+                        height: 20px;
+                        border: 1px solid black;
+                        background-color: rgb(199, 199, 199);
+                    }
+                    table 
+                    {
+                        border: 1px solid black;
+                        width: 50%;
+                        border-collapse: collapse;
+                    }
+               </style>
+               <table> 
+                    <tr>
+                        <th>First</th>
+                        <th>Second</th>
+                        <th>Third</th>
+                        <th>Fourth</th>
+                    </tr>
+                    <tr>
+                        <td rowspan="12"></td>
+                        <td rowspan="5" ></td>
+                        <td rowspan="3"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td ></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5"></td>
+                        <td rowspan="4"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td></td>
+                    </tr>
+               </table>
+           </p>
+       </article>
+   </main>
+   <nav class="left column">
+       <h3>Left heading</h3>
+       <ul>
+           <li><a href="about.html">О нас</a></li>
+       </ul>
+       <ul>
+        <li><a href="contact.html">Контакты</a></li>
+       </ul>
+       <ul>
+        <li><a href="media.html">Медиа</a></li>
+       </ul>
+       <ul>
+        <li><a href="index.html">Главная</a></li>
+       </ul>
+       <ul>
+        <li><a href="slider.html">Слайдер</a></li>
+       </ul>
+    </nav>
+   <div class="right column">
+       <h3>Right heading</h3>
+       <p></p>
+   </div>
+   <div class="push"></div>
+</div>
+<div class="footer-wrapper">
+   <footer class="footer"><p>Footer...</p></footer>
+</div>
+</body>
+</html>
