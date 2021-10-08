@@ -4,21 +4,102 @@
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    <title>3 Column Layout</title>
    <link rel="stylesheet" href="assets/css/layout.css">
+   <link rel="stylesheet" href="assets/css/style.css">
+   <script src="assets/js/script.js"></script>
+   <script>
+    window.onload = function() {
+        // ви можете зробити скільки завгодно слайдів
+        let slides = [
+            {
+                title: "Google",
+                background: "https://www.google.com.ua/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+                link: "http://google.com"
+            }, {
+                title: "Yahoo",
+                background: "https://s.yimg.com/rz/p/yahoo_homepage_en-US_s_f_p_bestfit_homepage.png",
+                link: "http://yahoo.com"
+            },
+            {
+                title: "Youtube",
+                background: "public/images/Youtube.png",
+                link: "http://youtube.com"
+            }
+        ]
+        Slider.initSlider(slides);
+
+        let prev = document.getElementById("prev");
+        prev.addEventListener("click", ()=>{
+            Slider.prevSlide()
+        })
+        let next = document.getElementById("next");
+        next.addEventListener("click", ()=>
+        {
+            Slider.nextSlide()
+        })
+
+        document.addEventListener("keypress",(event)=>
+        {
+            if(event.key.toLowerCase()==="s")
+            {
+                Slider.prevSlide()
+            }
+            else if (event.key.toLowerCase()==="w"){
+                Slider.nextSlide()
+            }
+        })
+
+        let shower = document.getElementById("shower");
+
+        shower.addEventListener("click",()=>
+        {
+            if(document.getElementById('slider').style.display === 'none')
+            {
+                document.getElementById('slider').style.display = 'block';
+                shower.innerHTML="Hide";
+            }
+            else 
+            {
+                document.getElementById('slider').style.display = 'none';
+                shower.innerHTML="Show";
+            }
+
+        })
+
+        let toggle = document.getElementById("auto")
+            toggle.addEventListener('click', (event)=>{
+            if (event.target.classList.contains('start')){
+                event.target.innerHTML = 'Start';
+                clearInterval(interval)
+            } else {
+                event.target.innerHTML = 'Stop';
+                interval = setInterval(()=>{
+                    Slider.nextSlide();
+                },1000)
+            }
+            event.target.classList.toggle('start')
+            })
+    };
+ </script> 
 </head>
 <body>
+
 <header class="header"><p><img src="public/images/download.png" alt="logo" width="40px" height="40px"></p></header>
 <div class="container">
    <main class="center column">
        <article>
            <h1>Слайдер</h1>
-           <p></p>
+            <div id="slider"></div>
+            <button id="prev">Prev</button>
+            <button id="next">Next</button>
+            <button id="shower">Hide</button>
+            <button id="auto">Start</button>
        </article>
    </main>
    <nav class="left column">
        <h3>Left heading</h3>
        <ul>
            <li><a href="about.html">О нас</a></li>
-       </ul> ити 
+       </ul> 
        <ul>
         <li><a href="contact.html">Контакты</a></li>
        </ul>
